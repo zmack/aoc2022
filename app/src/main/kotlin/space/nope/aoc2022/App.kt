@@ -3,8 +3,8 @@
  */
 package space.nope.aoc2022
 
-import space.nope.aoc2022.days.Day1
+import space.nope.aoc2022.days.Day2
 
 fun main() {
-    Day1.run()
+    Day2.run()
 }

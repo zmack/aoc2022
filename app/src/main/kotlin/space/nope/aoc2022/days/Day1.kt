@@ -1,5 +1,6 @@
 package space.nope.aoc2022.days
 
+import space.nope.aoc2022.common.Utils
 import java.io.File
 import java.util.PriorityQueue
 
@@ -10,9 +11,9 @@ data class Elf(
 
 object Day1 {
     fun run() {
-        val elves = javaClass.classLoader.getResource("puzzle-input-1.txt")
-            ?.let { File(it.toURI()) }
-            ?.readText()?.let { textToElf(it) } ?: return
+        val elves = Utils.loadFileResource("puzzle-input-1.txt") {
+            textToElf(it)
+        } ?: return
 
         val maxElf = elves.maxBy { it.totalCalories }
         println(maxElf)
